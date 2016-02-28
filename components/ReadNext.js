@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { link } from 'gatsby-helpers'
 import { prune, include as includes } from 'underscore.string'
 import find from 'lodash/find'
-import { rhythm, fontSizeToMS } from 'utils/typography'
 
 class ReadNext extends React.Component {
   render () {
@@ -25,36 +25,40 @@ class ReadNext extends React.Component {
       const body = prune(html.replace(/<[^>]*>/g, ''), 200)
 
       return (
-        <div>
-          <h6
-            style={{
-              margin: 0,
-              fontSize: fontSizeToMS(-1).fontSize,
-              lineHeight: fontSizeToMS(-1).lineHeight,
-              letterSpacing: -0.5,
-            }}
-          >
-            READ THIS NEXT:
-          </h6>
-          <h3
-            style={{
-              marginBottom: rhythm(1/4),
-            }}
-          >
-            <Link
-              to={{
-                pathname: nextPost.path,
-                query: {
-                  readNext: true,
-                },
-              }}
-            >
-              {nextPost.data.title}
-            </Link>
-          </h3>
-          <p>{body}</p>
-          <hr />
-        </div>
+        <section className="hero is-primary is-bold">
+          <div className="hero-content">
+            <div className="container">
+              <p>
+                <Link
+                  className="button is-info is-outlined is-inverted"
+                  to={{
+                    pathname: link(nextPost.path),
+                    query: {
+                      readNext: true,
+                    },
+                  }}
+                >
+                  Read this next
+                </Link>
+              </p>
+              <h5 className="title is-4">
+                <Link
+                  to={{
+                    pathname: link(nextPost.path),
+                    query: {
+                      readNext: true,
+                    },
+                  }}
+                >
+                  {nextPost.data.title}
+                </Link>
+              </h5>
+              <p>
+                {body}
+              </p>
+            </div>
+          </div>
+        </section>
       )
     }
   }

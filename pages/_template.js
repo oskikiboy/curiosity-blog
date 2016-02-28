@@ -1,61 +1,41 @@
 import React from 'react'
-import { Link } from 'react-router'
-import { Container } from 'react-responsive-grid'
-import { link } from 'gatsby-helpers'
-import { rhythm, fontSizeToMS } from 'utils/typography'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import { config } from 'config'
 
-import '../css/styles.css'
+import 'bulma/css/bulma.css'
+import 'font-awesome/css/font-awesome.css'
+import './assets/css/styles.css'
 
 class Template extends React.Component {
   render () {
     const { location, children } = this.props
-    let header
-    if (location.pathname === link('/')) {
-      header = (
-        <h1
-          style={{
-            fontSize: fontSizeToMS(2.5).fontSize,
-            lineHeight: fontSizeToMS(2.5).lineHeight,
-            marginBottom: rhythm(1.5),
-          }}
-        >
-          <Link
-            style={{
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={link('/')}
-          >
-            {config.blogTitle}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3>
-          <Link
-            style={{
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={link('/')}
-          >
-            {config.blogTitle}
-          </Link>
-        </h3>
-      )
-    }
+
     return (
-      <Container
-        style={{
-          maxWidth: rhythm(24),
-          padding: `${rhythm(2)} ${rhythm(1/2)}`,
-        }}
-      >
-        {header}
-        {children}
-      </Container>
+      <div>
+        <section className="hero is-primary is-left is-bold">
+          <div className="hero-header">
+            <Header location={location} />
+          </div>
+
+          <div className="hero-content">
+            <div className="container">
+              <h1 className="title">
+                {config.title}
+              </h1>
+              <h2 className="subtitle">
+                {config.subtitle}
+              </h2>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          {children}
+        </section>
+
+        <Footer />
+      </div>
     )
   }
 }

@@ -1,6 +1,6 @@
 ---
 title: New Beginnings
-date: "2015-05-28T22:40:32.169Z"
+date: "2016-02-28T22:12:03.284Z"
 layout: post
 readNext: "/hosting-static-sites-with-docker-and-nginx/"
 path: "/hi-folks/"

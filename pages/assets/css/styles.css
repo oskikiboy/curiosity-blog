@@ -1,0 +1,12 @@
+.media-post + .media-post {
+  margin-bottom: 20px;
+  padding-top: 0;
+  padding-bottom: 20px;
+
+  border-top: none;
+  border-bottom: 1px solid rgba(211, 214, 219, 0.5);
+}
+
+.media-date {
+  text-transform: uppercase;
+}

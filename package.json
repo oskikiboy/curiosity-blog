@@ -1,12 +1,13 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "gatsby-starter-blog-bulma",
   "version": "1.0.0",
-  "description": "Starter Gatsby Blog",
+  "description": "Starter Gatsby Blog built with Bulma.io",
   "main": "n/a",
   "scripts": {
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "gatsby develop"
+    "dev": "gatsby develop",
+    "build": "gatsby build --prefix-links"
   },
   "repository": {
     "type": "git",
@@ -22,15 +23,16 @@
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "dependencies": {
+    "bulma": "0.0.16",
+    "font-awesome": "^4.5.0",
+    "html-ellipsis": "^1.1.1",
     "lodash": "^4.5.0",
     "moment": "^2.11.2",
     "react": "^0.14.7",
     "react-document-title": "^2.0.1",
     "react-dom": "^0.14.7",
-    "react-responsive-grid": "^0.3.1",
     "react-router": "^2.0.0",
     "safe-access": "^0.1.0",
-    "typography": "^0.7.0",
     "underscore.string": "^3.2.3"
   },
   "devDependencies": {
@@ -38,8 +40,10 @@
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^5.0.1",
     "eslint-plugin-react": "^3.16.1",
+    "file-loader": "^0.8.5",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.0",
-    "redbox-react": "^1.0.1"
+    "redbox-react": "^1.0.1",
+    "url-loader": "^0.5.7"
   }
 }
