@@ -9,7 +9,7 @@ class Header extends React.Component {
       <header className="header">
         <div className="container">
           <div className="header-left">
-            <Link to={link('/')}>
+            <Link to={link('https://oskikiboy.github.io/Curiosity-Website/')}>
               <span className="header-item">
                 <img src="/assets/img/logo.png" />
               </span>
@@ -22,7 +22,7 @@ class Header extends React.Component {
           </span>
           <div id="header-menu" className="header-right header-menu">
             <span className="header-item">
-              <Link to={link('/')} activeClassName="is-active">Home</Link>
+              <Link to={link('https://oskikiboy.github.io/Curiosity-Website/')} activeClassName="is-active">Home</Link>
             </span>
 
             <span className="header-item">
